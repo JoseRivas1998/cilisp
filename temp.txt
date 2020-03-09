@@ -1,0 +1,3 @@
+( (let (integer gcd lambda (a b) (cond(larger(b)(a))(gcd(b)(a))(cond(equal(b)(0))(a)(gcd(b)(remainder(a)(b))))))) (gcd 366 60) )
+
+((let (real f lambda (x) (x))) (f 1) )

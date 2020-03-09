@@ -1,0 +1,50 @@
+> (add ((let (abcd 1)) (sub 3 abcd)) 4)
+6.00
+> (mult ((let (a 1) (b 2)) (add a b)) (sqrt 2))
+4.24
+> (add ((let (a ((let (b 2)) (mult b (sqrt 10))))) (div a 2)) ((let (c 5)) (sqrt c)))
+5.40
+> ((let (first (sub 5 1)) (second 2)) (add (pow 2 first) (sqrt second)))
+17.41
+> ((let (a ((let (c 3) (d 4)) (mult c d)))) (sqrt a))
+3.46
+> ((let (integer a 1))(print a))
+=> 1
+1.00
+> ((let (real b 10))(print b))
+=> 10.00
+10.00
+> ((let (integer a 1.2)) (print a))
+=> 1
+1.00
+> ((let (integer a (read)) (real b (read))) (print a b))
+read := 3
+read := 7
+=> 3 7.00
+7.00
+> ((let (a 100)) (cond (smaller (rand) 100) (add a 2) (sub a 2)))
+98.00
+> ((let (myA (read))(myB (rand)))(cond (smaller myA myB) (print myA) (print myB)))
+read := 4
+=> 4.00
+4.00
+> (add 1 2 3 4 5)
+15.00
+> ((let (integer a 1)(real b 2))(print a b 3))
+=> 1 2.00 3
+3.00
+> ((let (real myFunc lambda (x y) (mult (add x 5) (sub y 2)))) (sub (myFunc 3 5) 2))
+22.00
+> ((let (f lambda (x y) (add x y)))(f (sub 5 2) (mult 2 3)))
+9.00
+> ((let (a 1) (f lambda (x y) (add x y)))(f 2 (f a 3)))
+6.00
+> ( ( let ( integer f lambda ( n ) ( cond ( equal n 1 ) ( 1 ) ( mult n ( f ( sub n 1 ) ) ) ) ) ) ( f (5) ) )
+120.00
+> ( ( let ( integer f lambda ( n ) ( cond ( equal n 1 ) ( 1 ) ( mult n ( f ( sub n 1 ) ) ) ) ) ) ( f ( add 3 2 ) ) )
+120.00
+> ( ( let ( real f lambda (x) ( pow x 2 ) ) ( real g lambda (x) ( x )  ) ( real h lambda (x) ( add (f x) (g x) ) ) ) ( h 3 ) )
+12.00
+> ( ( let ( real f lambda (x) ( pow x 2 ) ) ( real g lambda (x) ( f ( add 1 x ) ) ) ) ( g 3 ) )
+16.00
+> exit
